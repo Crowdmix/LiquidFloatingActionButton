@@ -43,8 +43,8 @@ public class LiquidFloatingActionButton : UIView {
         }
     }
     
-    public var delegate:   LiquidFloatingActionButtonDelegate?
-    public var dataSource: LiquidFloatingActionButtonDataSource?
+    public weak var delegate:   LiquidFloatingActionButtonDelegate?
+    public weak var dataSource: LiquidFloatingActionButtonDataSource?
 
     public var responsible = true
     public var isOpening: Bool  {
@@ -165,7 +165,7 @@ public class LiquidFloatingActionButton : UIView {
         self.circleLayer.cornerRadius = self.frame.width * 0.5
         self.circleLayer.masksToBounds = true
         if touching && responsible {
-            self.circleLayer.backgroundColor = self.color.white(0.5).CGColor
+            self.circleLayer.backgroundColor = UIColor.darkGrayColor().CGColor
         } else {
             self.circleLayer.backgroundColor = self.color.CGColor
         }
@@ -268,7 +268,7 @@ class ActionBarBaseView : UIView {
 
 class CircleLiquidBaseView : ActionBarBaseView {
 
-    let openDuration: CGFloat  = 0.6
+    let openDuration: CGFloat  = 0.2
     let closeDuration: CGFloat = 0.2
     let viscosity: CGFloat     = 0.65
     var animateStyle: LiquidFloatingActionButtonAnimateStyle = .Up
@@ -511,7 +511,7 @@ public class LiquidFloatingCell : LiquittableCircle {
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if responsible {
             originalColor = color
-            color = originalColor.white(0.5)
+            color = UIColor.darkGrayColor()
             setNeedsDisplay()
         }
     }

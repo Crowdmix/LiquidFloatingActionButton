@@ -79,6 +79,7 @@ class ViewController: UIViewController, LiquidFloatingActionButtonDataSource, Li
         // Do any additional setup after loading the view, typically from a nib.
         let createButton: (CGRect, LiquidFloatingActionButtonAnimateStyle) -> LiquidFloatingActionButton = { (frame, style) in
             let floatingActionButton = CustomDrawingActionButton(frame: frame)
+            floatingActionButton.color = UIColor.blackColor()
             floatingActionButton.animateStyle = style
             floatingActionButton.dataSource = self
             floatingActionButton.delegate = self
