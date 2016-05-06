@@ -512,8 +512,8 @@ public class LiquidFloatingCell : LiquittableCircle {
     }
     
     private func resizeSubviews() {
-        let size = CGSize(width: frame.width * 0.5, height: frame.height * 0.5)
-        imageView.frame = CGRect(x: frame.width - frame.width * internalRatio, y: frame.height - frame.height * internalRatio, width: size.width, height: size.height)
+        let size = CGSize(width: frame.width , height: frame.height )
+        imageView.frame = bounds //CGRect(x: frame.width/2.0, y: frame.height/2.0, width: size.width, height: size.height)
     }
     
     func update(key: CGFloat, open: Bool) {
