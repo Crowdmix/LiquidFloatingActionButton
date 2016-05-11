@@ -56,9 +56,10 @@ public class LiquidFloatingActionButton : UIView {
     }
     public private(set) var isClosed: Bool = true
     
-    @IBInspectable public var color: UIColor = UIColor(red: 82 / 255.0, green: 112 / 255.0, blue: 235 / 255.0, alpha: 1.0) {
+    @IBInspectable public var color: UIColor = UIColor.whiteColor() {
         didSet {
             baseView.color = color
+            backgroundColor = UIColor.clearColor()
         }
     }
     

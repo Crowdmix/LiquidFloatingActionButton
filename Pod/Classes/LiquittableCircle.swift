@@ -65,7 +65,8 @@ public class LiquittableCircle : UIView {
     }
 
     func draw(path: UIBezierPath) -> CAShapeLayer {
-        circleLayer.lineWidth = 3.0
+        circleLayer.strokeColor = self.color.CGColor
+        circleLayer.lineWidth = 1.0
         circleLayer.fillColor = self.color.CGColor
         circleLayer.path = path.CGPath
         return circleLayer
