@@ -284,8 +284,8 @@ class ActionBarBaseView : UIView {
 
 class CircleLiquidBaseView : ActionBarBaseView {
     
-    let openDuration: CGFloat  = 0.2
-    let closeDuration: CGFloat = 0.2
+    let openDuration: CGFloat  = 0.08
+    let closeDuration: CGFloat = 0.08
     let viscosity: CGFloat     = 1.0
     var animateStyle: LiquidFloatingActionButtonAnimateStyle = .Up
     var color: UIColor = UIColor(red: 82 / 255.0, green: 112 / 255.0, blue: 235 / 255.0, alpha: 1.0) {
@@ -429,11 +429,6 @@ class CircleLiquidBaseView : ActionBarBaseView {
     }
     
     func stop() {
-        for cell in openingCells {
-            if enableShadow {
-                cell.layer.appendShadow()
-            }
-        }
         openingCells = []
         keyDuration = 0
         displayLink?.invalidate()
