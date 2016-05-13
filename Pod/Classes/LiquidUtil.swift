@@ -19,9 +19,9 @@ func withBezier(f: (UIBezierPath) -> ()) -> UIBezierPath {
 extension CALayer {
     func appendShadow() {
         shadowColor = UIColor.blackColor().CGColor
-        shadowRadius = 15.0
-        shadowOpacity = 0.3
-        shadowOffset = CGSize(width: 0, height: 8)
+        shadowRadius = 25.0
+        shadowOpacity = 0.5
+        shadowOffset = CGSize(width: 0, height: 6)
         masksToBounds = false
     }
     

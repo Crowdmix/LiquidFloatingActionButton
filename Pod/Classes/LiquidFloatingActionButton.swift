@@ -119,7 +119,7 @@ public class LiquidFloatingActionButton : UIView {
     public func open() {
         
         // rotate plus icon
-        CATransaction.setAnimationDuration(0.8)
+        CATransaction.setAnimationDuration(0.3)
         self.plusLayer.transform = CATransform3DMakeRotation((CGFloat(M_PI) * rotationDegrees) / 180, 0, 0, 1)
         
         self.imageLayer?.hidden = true
@@ -139,7 +139,7 @@ public class LiquidFloatingActionButton : UIView {
     public func close() {
         
         // rotate plus icon
-        CATransaction.setAnimationDuration(0.8)
+        CATransaction.setAnimationDuration(0.3)
         self.plusLayer.transform = CATransform3DMakeRotation(0, 0, 0, 1)
         self.imageLayer?.hidden = false
         self.plusLayer.hidden = true
@@ -161,7 +161,7 @@ public class LiquidFloatingActionButton : UIView {
         // draw plus shape
         let plusLayer = CAShapeLayer()
         plusLayer.lineCap = kCALineCapRound
-        plusLayer.strokeColor = UIColor.blackColor().CGColor
+        plusLayer.strokeColor = UIColor.whiteColor().CGColor
         plusLayer.lineWidth = 3.0
         
         let path = UIBezierPath()
@@ -284,14 +284,14 @@ class ActionBarBaseView : UIView {
 
 class CircleLiquidBaseView : ActionBarBaseView {
     
-    let openDuration: CGFloat  = 0.08
-    let closeDuration: CGFloat = 0.08
+    let openDuration: CGFloat  = 0.2
+    let closeDuration: CGFloat = 0.2
     let viscosity: CGFloat     = 1.0
     var animateStyle: LiquidFloatingActionButtonAnimateStyle = .Up
     var color: UIColor = UIColor(red: 82 / 255.0, green: 112 / 255.0, blue: 235 / 255.0, alpha: 1.0) {
         didSet {
-            engine?.color = color
-            bigEngine?.color = color
+            engine?.color = UIColor.whiteColor()
+            bigEngine?.color = UIColor.whiteColor()
         }
     }
     
@@ -313,10 +313,10 @@ class CircleLiquidBaseView : ActionBarBaseView {
         engine?.viscosity = viscosity
         self.bigEngine = SimpleCircleLiquidEngine(radiusThresh: radius, angleThresh: 0.55)
         bigEngine?.viscosity = viscosity
-        self.engine?.color = actionButton.color
-        self.bigEngine?.color = actionButton.color
+        self.engine?.color = UIColor.whiteColor()
+        self.bigEngine?.color = UIColor.whiteColor()
         
-        baseLiquid = LiquittableCircle(center: self.center.minus(self.frame.origin), radius: radius, color: actionButton.color)
+        baseLiquid = LiquittableCircle(center: self.center.minus(self.frame.origin), radius: radius, color: UIColor.whiteColor())
         baseLiquid?.clipsToBounds = false
         baseLiquid?.layer.masksToBounds = false
         
